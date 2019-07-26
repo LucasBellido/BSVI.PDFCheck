@@ -14,5 +14,4 @@ C:\Users\Lucas.Bellido\source\repos\BSVI.FileCheck\BSVI.FileCheck\obj\Debug\BSVI
 C:\Users\Lucas.Bellido\source\repos\BSVI.FileCheck\BSVI.FileCheck\obj\Debug\BSVI.FileCheck.exe
 C:\Users\Lucas.Bellido\source\repos\BSVI.FileCheck\BSVI.FileCheck\obj\Debug\BSVI.FileCheck.pdb
 C:\Users\Lucas.Bellido\source\repos\BSVI.FileCheck\BSVI.FileCheck\obj\Debug\BSVI.FileCheck.csprojAssemblyReference.cache
-C:\Users\Lucas.Bellido\source\repos\BSVI.FileCheck\BSVI.FileCheck\bin\Debug\itextsharp.dll
-C:\Users\Lucas.Bellido\source\repos\BSVI.FileCheck\BSVI.FileCheck\bin\Debug\itextsharp.xml
+C:\Users\Lucas.Bellido\source\repos\BSVI.FileCheck\BSVI.FileCheck\bin\Debug\Aspose.Pdf.dll

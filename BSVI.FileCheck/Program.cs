@@ -9,13 +9,13 @@ using System.Linq;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
-using iTextSharp.text.pdf;
-using iTextSharp.text.exceptions;
+using System.Reflection;
 
 namespace BSVI.FileCheck
 {
     class Program
     {
+        static Aspose.Pdf.License license;
         static void Main(string[] args)
         {
             string outputPath = "";
@@ -137,6 +137,9 @@ namespace BSVI.FileCheck
         {
             try
             {
+                getLicense();
+
+
                 List<ObjectVersion> corruptDocuments = new List<ObjectVersion>();
 
                 var vaultGuid = vault.GetGUID();
@@ -274,6 +277,17 @@ namespace BSVI.FileCheck
                 var temp = e.Message;
             }
         }
+        private static void getLicense()
+        {
+            license = new Aspose.Pdf.License();
+            var assembly = Assembly.GetExecutingAssembly();
+            var stream = assembly.GetManifestResourceStream("BSVI.FileCheck.Aspose.Total.lic");
+            if (stream == null)
+            {
+                throw new Exception("Invalid aspose license");
+            }
+            license.SetLicense(stream);
+        }
 
         public static string getAuthToken(string username, string password, string vaultGuid, string RESTAPILink)
         {
@@ -342,13 +356,13 @@ namespace BSVI.FileCheck
         {
             try
             {
-                using (PdfReader pdfReader = new PdfReader(path))
+                using (Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(path))
                 {
                     return true;
                 }
             }
 
-            catch (BadPasswordException)
+            catch (Aspose.Pdf.InvalidPasswordException e)
             {
                 return true;
             }
